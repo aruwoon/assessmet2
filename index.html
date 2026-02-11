@@ -1,102 +1,18 @@
 <!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>前世診断</title>
-  <style>
-    body {
-      font-family: "Hiragino Kaku Gothic ProN", sans-serif;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      color: white;
-    }
-
-    .container {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 40px;
-      border-radius: 20px;
-      text-align: center;
-      width: 350px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    }
-
-    input {
-      width: 80%;
-      padding: 10px;
-      margin: 15px 0;
-      border: none;
-      border-radius: 8px;
-    }
-
-    button {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      background-color: #ffcc00;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      background-color: #ff9900;
-    }
-
-    .result-box {
-      margin-top: 20px;
-      font-size: 18px;
-      min-height: 60px;
-    }
-  </style>
-</head>
-<body>
-
-<div class="container">
-  <h1> あなたの前世診断　</h1>
-  <p>名前を入力してください</p>
-
-  <input type="text" id="nameInput" placeholder="例：山田 太郎">
-  <button onclick="diagnose()">診断する</button>
-
-  <div id="result" class="result-box"></div>
-</div>
-
-<script>
-function diagnose() {
-  const name = document.getElementById("nameInput").value.trim();
-  const resultBox = document.getElementById("result");
-
-  if (name === "") {
-    resultBox.textContent = "名前を入力してください！";
-    return;
-  }
-
-  const pastLives = [
-    "戦国時代の武将",
-    "江戸時代の商人",
-    "平安時代の貴族",
-    "伝説の魔法使い",
-    "王国を守る騎士",
-    "神秘的な占い師",
-    "海を渡る冒険者",
-    "森に住む精霊"
-  ];
-
-  let sum = 0;
-  for (let i = 0; i < name.length; i++) {
-    sum += name.charCodeAt(i);
-  }
-
-  const index = sum % pastLives.length;
-  const result = `${name}の前世は「${pastLives[index]}」です！`;
-
-  resultBox.textContent = result;
-}
-</script>
-
-</body>
+<html lang="ja"> 
+  <head> 
+    <meta charset="UTF-8">
+    <title>前世診断</title>
+    <link rel="stylesheet" href="style.css">
+  </head> 
+  <body> 
+    <div class="container">
+      <h1> あなたの前世診断 </h1>
+      <p>名前を入力してください</p> 
+      <input type="text" id="nameInput" placeholder="例：山田 太郎"> 
+      <button onclick="diagnose()">診断する</button>
+      <div id="result" class="result-box"> </div> 
+    </div>
+    <script src="script.js"> </script>
+  </body> 
 </html>
