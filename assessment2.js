@@ -18,7 +18,6 @@ function diagnose() {
     "森に住む精霊"
   ];
 
-  // 名前から数値を生成（毎回同じ結果になる）
   let sum = 0;
   for (let i = 0; i < name.length; i++) {
     sum += name.charCodeAt(i);
